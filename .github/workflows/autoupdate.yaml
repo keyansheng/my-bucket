@@ -1,0 +1,53 @@
+name: Autoupdate
+
+on:
+  schedule:
+    - cron: 0 * * * *
+  workflow_dispatch:
+
+jobs:
+  autoupdate:
+    name: Autoupdate
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update apps
+        run: |
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+          Invoke-WebRequest -UseBasicParsing get.scoop.sh | Invoke-Expression
+
+          function Get-ScoopAppVersions {
+              $Versions = @{}
+              Get-ChildItem *.json | ForEach-Object {
+                  $App = $_.BaseName
+                  $Manifest = Get-Content $_.Name | ConvertFrom-Json
+                  $Version = $Manifest.version
+                  $Versions[$App] = $Version
+              }
+              $Versions
+          }
+
+          $CurrentVersions = Get-ScoopAppVersions
+          ~\scoop\apps\scoop\current\bin\checkver.ps1 -Dir . -Update
+          $UpdatedVersions = Get-ScoopAppVersions
+
+          git config user.name keyansheng
+          git config user.email 65121402+keyansheng@users.noreply.github.com
+
+          $CurrentVersions.GetEnumerator() | ForEach-Object {
+              $App = $_.Name
+              $CurrentVersion = $CurrentVersions[$App]
+              $UpdatedVersion = $UpdatedVersions[$App]
+              if ($UpdatedVersion -ne $CurrentVersion) {
+                  git add "$App.json"
+                  git commit -m "Update $App to version $UpdatedVersion"
+              }
+          }
+
+      - name: Push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
