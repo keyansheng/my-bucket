@@ -1,0 +1,17 @@
+{
+    "version": "2021.01.01",
+    "homepage": "https://github.com/keyansheng/powershell-scripts",
+    "license": "MIT",
+    "url": "https://github.com/keyansheng/powershell-scripts/archive/2021.01.01.zip",
+    "hash": "8d325154400ae71d2f272c64587fb2ea63ea8104bcb87da57e191909e0fecd39",
+    "extract_dir": "powershell-scripts-2021.01.01",
+    "bin": [
+        "scoopdownload.ps1",
+        "setup.ps1"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/keyansheng/powershell-scripts/archive/$version.zip",
+        "extract_dir": "powershell-scripts-$version"
+    }
+}
