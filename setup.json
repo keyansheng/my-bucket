@@ -1,0 +1,12 @@
+{
+    "version": "2021.01.01",
+    "homepage": "https://github.com/keyansheng/powershell-scripts",
+    "license": "MIT",
+    "url": "https://github.com/keyansheng/powershell-scripts/releases/download/2021.01.01/setup.ps1",
+    "hash": "c159cf55b51b96d8241bdb9e399c7223eecfd5721afe45993711ce7e47a7a9a5",
+    "bin": "setup.ps1",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/keyansheng/powershell-scripts/releases/download/$version/setup.ps1"
+    }
+}

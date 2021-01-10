@@ -1,0 +1,30 @@
+{
+    "version": "0.2019.10.27",
+    "description": "Backup your entire current scoop installation",
+    "homepage": "https://git.irs.sh/KNOXDEV/scoop-backup/",
+    "license": "Unlicense",
+    "url": "https://git.irs.sh/KNOXDEV/scoop-backup/archive/e2522e0686088c13d61042282531d5b4a4995c65.zip",
+    "hash": "e55d02d48fda6603b6b7c0c7d75ce304d3d9e5c65a00ca96bd004822abdbc229",
+    "extract_dir": "scoop-backup",
+    "bin": [
+        [
+            "scoop-backup.ps1",
+            "scoopbackup"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "scoop-backup.ps1",
+            "Scoop Backup"
+        ]
+    ],
+    "persist": "backups",
+    "checkver": {
+        "url": "https://git.irs.sh/KNOXDEV/scoop-backup/graph",
+        "re": "(?<sha>[0-9a-f]{40})(.|\\s)*?(\\d{4})-(\\d{2})-(\\d{2})",
+        "replace": "0.${2}.${3}.${4}"
+    },
+    "autoupdate": {
+        "url": "https://git.irs.sh/KNOXDEV/scoop-backup/archive/$matchSha.zip"
+    }
+}
