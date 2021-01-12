@@ -1,0 +1,47 @@
+name: Autoupdate
+
+on:
+  schedule:
+    - cron: 0 * * * *
+  workflow_dispatch:
+
+jobs:
+  autoupdate:
+    name: Autoupdate
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Scoop
+        run: |
+          Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+          Invoke-WebRequest -UseBasicParsing get.scoop.sh | Invoke-Expression
+
+      - name: Configure Git
+        run: |
+          git config user.name keyansheng
+          git config user.email 65121402+keyansheng@users.noreply.github.com
+
+      - name: Update and commit apps
+        run: |
+          Get-ChildItem *.json | Select-Object BaseName | % {
+            $App = $_.BaseName
+            $BeforeVersion = (Get-Content "$App.json" | ConvertFrom-Json).version
+            $HOME\scoop\apps\scoop\current\bin\checkver.ps1 -Dir . -App $App -Update
+            $AfterVersion = (Get-Content "$App.json" | ConvertFrom-Json).version
+            if ($BeforeVersion -ne $AfterVersion) {
+              git add "$App.json"
+              git commit -m "Update $App to version $AfterVersion"
+            }
+          }
+
+      - name: Create pull pequest
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: autoupdate
+          commit-message: Autoupdate
+          committer: keyansheng <65121402+keyansheng@users.noreply.github.com>
+          author: keyansheng <65121402+keyansheng@users.noreply.github.com>
+          title: Autoupdate
+          body:
