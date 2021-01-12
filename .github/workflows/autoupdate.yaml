@@ -28,7 +28,7 @@ jobs:
           Get-ChildItem *.json | Select-Object BaseName | % {
             $App = $_.BaseName
             $BeforeVersion = (Get-Content "$App.json" | ConvertFrom-Json).version
-            $HOME\scoop\apps\scoop\current\bin\checkver.ps1 -Dir . -App $App -Update
+            "$HOME\scoop\apps\scoop\current\bin\checkver.ps1" -Dir . -App $App -Update
             $AfterVersion = (Get-Content "$App.json" | ConvertFrom-Json).version
             if ($BeforeVersion -ne $AfterVersion) {
               git add "$App.json"
