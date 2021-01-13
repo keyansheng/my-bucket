@@ -1,7 +1,7 @@
 {
     "version": "2021.01.01",
     "homepage": "https://github.com/keyansheng/powershell-scripts",
-    "license": "MIT",
+    "license": "Unlicense",
     "url": "https://github.com/keyansheng/powershell-scripts/releases/download/2021.01.01/scoopdownload.ps1",
     "hash": "1f66c0df8d20915060da056a2b2d0025219566e28f153b7f6721949054fed7d6",
     "bin": "scoopdownload.ps1",
