@@ -19,7 +19,7 @@
     ],
     "persist": "Downloads",
     "checkver": {
-        "url": "https://anontpp.com/",
+        "url": "https://assets.anontpp.com/downloader.zip",
         "script": [
             "(New-Object System.Net.WebClient).DownloadFile('https://assets.anontpp.com/downloader.zip', \"$env:TMP\\downloader.zip\")",
             "Expand-Archive $env:TMP\\downloader.zip $env:TMP\\downloader",
