@@ -1,10 +1,10 @@
 {
-    "version": "1.1.11",
+    "version": "1.1.16",
     "description": "Free HQ music streaming app",
     "homepage": "https://freezer.life/",
     "license": "Freeware",
-    "url": "https://files.freezer.life/0:/PC/1.1.11/Freezer Portable 1.1.11.exe#/Freezer Portable.exe",
-    "hash": "8fb4ed9babebada8d4692b3275035593d33eae84f0ae63b82a3dedc461637fb7",
+    "url": "https://files.freezer.life/0:/PC/1.1.16/Freezer Portable 1.1.16.exe#/Freezer Portable.exe",
+    "hash": "18751ac1c037fee79b251600ab3cef42df37ffe0584d2c50c978632bf9e15d89",
     "bin": [
         [
             "Freezer Portable.exe",
