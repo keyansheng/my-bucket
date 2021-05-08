@@ -1,10 +1,10 @@
 {
-    "version": "0.17.1035",
+    "version": "0.17.1036",
     "description": "API Support for your favorite torrent trackers",
     "homepage": "https://github.com/Jackett/Jackett",
     "license": "GPL-2.0-or-later",
-    "url": "https://github.com/Jackett/Jackett/releases/download/v0.17.1035/Jackett.Binaries.Windows.zip",
-    "hash": "ff3a297d30f0e11772cabe35a45567894940e033801613443076eba31bf5f552",
+    "url": "https://github.com/Jackett/Jackett/releases/download/v0.17.1036/Jackett.Binaries.Windows.zip",
+    "hash": "d7d1b96da598f481caeeb811c7c0e4cbac9e2ee8d12a0d51286aa75335f30a15",
     "shortcuts": [
         [
             "Jackett\\JackettTray.exe",
