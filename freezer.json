@@ -1,10 +1,10 @@
 {
-    "version": "1.1.18",
+    "version": "1.1.19",
     "description": "Free HQ music streaming app",
     "homepage": "https://freezer.life/",
     "license": "Freeware",
-    "url": "https://files.freezer.life/0:/PC/1.1.18/Freezer 1.1.18.exe#/Freezer.exe",
-    "hash": "65ef7291a665be7a9c380c0326001d074cdf5a87cff9e6cce792c6249b02b2e2",
+    "url": "https://files.freezer.life/0:/PC/1.1.19/Freezer 1.1.19.exe#/Freezer.exe",
+    "hash": "7e317929e394c6b1faea8207330d0443d210cc2a442ae557816c5d149f398201",
     "bin": "Freezer.exe",
     "shortcuts": [
         [
