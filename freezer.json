@@ -12,7 +12,10 @@
             "Freezer"
         ]
     ],
-    "checkver": "Freezer PC ([\\d.]+):",
+    "checkver": {
+        "url": "https://git.freezer.life/exttex/freezerpc/raw/branch/master/package.json",
+        "jp": "$.version"
+    },
     "autoupdate": {
         "url": "https://files.freezer.life/0:/PC/$version/Freezer $version.exe#/Freezer.exe"
     }
