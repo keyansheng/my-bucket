@@ -1,10 +1,10 @@
 {
-    "version": "1.6",
+    "version": "1.7",
     "description": "Download episodes from GoPlay",
     "homepage": "https://goplay.anontpp.com/",
     "license": "Freeware",
-    "url": "https://assets.anontpp.com/downloader v1.6.zip",
-    "hash": "f24247f2d3b4267ffd8084d2dd90f0c55596c9d78fc0e5ac4e66887d97cb58de",
+    "url": "https://assets.anontpp.com/downloader v1.7.zip",
+    "hash": "023d65fceef6a31fe7a4150280cce1b9619c8ccde2c9581f2d858ff47f6e3ca0",
     "bin": [
         [
             "Downloader.bat",
