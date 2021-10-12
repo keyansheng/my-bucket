@@ -17,5 +17,20 @@
             "GoPlay Downloader"
         ]
     ],
-    "persist": "Downloads"
+    "persist": "Downloads",
+    "checkver": {
+        "url": "https://assets.anontpp.com/downloader.zip",
+        "script": [
+            "(New-Object System.Net.WebClient).DownloadFile('https://assets.anontpp.com/downloader.zip', \"$env:TMP\\downloader.zip\")",
+            "Expand-Archive $env:TMP\\downloader.zip $env:TMP\\downloader",
+            "$downloader_bat = Get-Content $env:TMP\\downloader\\downloader.bat",
+            "Remove-Item $env:TMP\\downloader.zip",
+            "Remove-Item $env:TMP\\downloader\\ -Recurse",
+            "$downloader_bat"
+        ],
+        "regex": "GoPlay Downloader for Windows \\(ver ([\\d.]+)\\)"
+    },
+    "autoupdate": {
+        "url": "https://assets.anontpp.com/downloader v$version.zip"
+    }
 }
