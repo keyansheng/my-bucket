@@ -16,7 +16,8 @@ jobs:
       - name: Update apps
         run: |
           Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-          Invoke-WebRequest -UseBasicParsing get.scoop.sh | Invoke-Expression
+          Invoke-WebRequest -UseBasicParsing get.scoop.sh -OutFile install.ps1
+          .\install.ps1 -RunAsAdmin
 
           function Get-ScoopAppVersions {
               $Versions = @{}
